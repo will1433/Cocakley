@@ -1,0 +1,352 @@
+/* home.css
+   More “pub vibe” for the Home page.
+   menu.css already gives colors, fonts, header, buttons, etc.
+*/
+
+/* ===== HERO SECTION (Big banner) ===== */
+.hero-home {
+  margin-top: 30px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+
+  /* banner card */
+  background:
+    radial-gradient(circle at top left, rgba(212,175,55,0.14), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(15,38,22,0.25), transparent 55%),
+    #111;
+  color: #fff;
+  border-radius: 22px;
+  padding: 24px 26px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* text */
+.hero-text .display {
+  margin: 0 0 8px;
+  color: #fff;
+}
+
+.hero-text .sub {
+  margin: 0 0 18px;
+  max-width: 520px;
+  color: rgba(255,255,255,0.85);
+}
+
+/* little chips under hero text */
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.hero-badge {
+  font: 600 11px/1 Inter, system-ui;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(0,0,0,0.25);
+}
+
+/* actions */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.hero-actions .btn-dark {
+  text-decoration: none;
+  background: #f5b03b;
+  border-color: #f5b03b;
+  color: #111;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.35);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.hero-actions .btn-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.45);
+  filter: brightness(1.03);
+}
+
+.hero-actions .btn-ghost {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font: 600 14px/1 Inter, system-ui;
+  transition: background .15s ease, color .15s ease;
+}
+
+.hero-actions .btn-ghost:hover {
+  background:#fff;
+  color:#111;
+}
+
+.hero-call {
+  font-size: 14px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+}
+
+/* hero image */
+.hero-photo {
+  text-align: center;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 12px solid rgba(255,255,255,0.9);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.6);
+}
+
+/* ===== ANNOUNCEMENT / HOURS ===== */
+.card-announcement {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 24px;
+  padding: 20px 22px;
+  background:#fffdf7;
+}
+
+.card-announcement h3,
+.card-announcement h4 {
+  margin: 0 0 6px;
+  font: 700 18px/1.3 Inter, system-ui;
+}
+
+.ann-text {
+  margin: 0 0 8px;
+}
+
+.ann-small {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.ann-closed {
+  color: #b32828;
+  font-weight: 600;
+}
+
+.ann-contact a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* simple “ribbon” bar at the top of this section */
+#announcement .section-head {
+  align-items: center;
+}
+
+#announcement .section-title::after {
+  content: " • Kitchen opens at 11 AM";
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* ===== HOME CARDS (Events & Specials) ===== */
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.home-card {
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  padding: 16px 16px 18px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.home-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at top left, rgba(212,175,55,0.14), transparent 55%);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .18s ease;
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(0,0,0,0.10);
+  border-color: var(--line-2);
+}
+
+.home-card:hover::before {
+  opacity:1;
+}
+
+.home-card h3 {
+  margin: 0 0 8px;
+  font: 700 18px/1.3 Inter, system-ui;
+}
+
+.home-card p {
+  margin: 0 0 10px;
+  font-size: 14.5px;
+  color: var(--muted);
+}
+
+.home-link {
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* small tag in corner (optional flair) */
+.home-card span.card-tag {
+  position:absolute;
+  top:12px;
+  right:12px;
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:999px;
+  background:var(--pill);
+  border:1px solid var(--line);
+}
+
+/* ===== ABOUT CARD ===== */
+.card-about {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+  gap: 24px;
+  padding: 20px 22px;
+}
+
+.card-about p {
+  margin: 0 0 10px;
+}
+
+.about-photo {
+  text-align: center;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 10px solid #fff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== CATERING CARD ===== */
+.card-catering {
+  padding: 20px 22px 22px;
+  text-align: left;
+}
+
+.card-catering p {
+  margin: 0 0 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .hero-photo {
+    order: -1;
+  }
+
+  .card-announcement,
+  .card-about {
+    grid-template-columns: 1fr;
+  }
+
+  .home-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-grid {
+    padding: 18px 18px;
+  }
+
+  .hero-text .display {
+    font-size: 38px;
+  }
+
+  .hero-text .sub {
+    font-size: 14px;
+  }
+
+  .home-cards {
+    grid-template-columns: 1fr;
+  }
+  /* ========== GLOBAL SECTION ANIMATION ON HOME ========== */
+/* start hidden */
+.section {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.55s ease-out,
+    transform 0.55s ease-out;
+  transition-delay: var(--delay, 0ms);
+}
+
+/* when JS adds .show */
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* hero gets a slightly different feel */
+.hero-home {
+  transform: translateY(18px) scale(0.98);
+  opacity: 0;
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
+}
+
+/* when JS marks it ready */
+.hero-home.hero-ready {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* keep spacing from before if you added it */
+.section {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+@media (max-width: 640px) {
+  .section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+  
+}
+

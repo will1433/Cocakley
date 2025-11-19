@@ -3,300 +3,210 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coakley’s Pub — Menu</title>
-
+  <title>Coakley’s Pub — Home</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Global styles (colors, header, buttons) -->
   <link rel="stylesheet" href="menu.css" />
-  <script src="menu.js" defer></script>
+  <!-- Home-only layout tweaks -->
+  <link rel="stylesheet" href="index.css" />
+  <script src="index.js" defer></script>
 </head>
 <body id="top">
 
-  <!-- Sticky header with tabs (keeps your scroll function) -->
+  <!-- HEADER -->
   <header class="header">
     <div class="shell">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
-        <h1 class="title">Coakley’s Pub <span class="tag">Menu</span></h1>
+        <h1 class="title">Coakley’s Pub <span class="tag">Home</span></h1>
       </div>
-      <nav class="tabs" aria-label="Jump to section">
-        <a class="tab" href="#latest">Latest</a>
-        <a class="tab" href="#taste">Real Taste</a>
-        <a class="tab" href="#categories">Categories</a>
-        <a class="tab" href="#appetizers">Appetizers</a>
-        <a class="tab" href="#mains">Mains</a>
-        <a class="tab" href="#drinks">Drinks</a>
-        <a class="tab" href="#specials">Specials</a>
-        <a class="tab" href="#connect">Contact</a>
-        <a class="tab" href="events.html">event</a>
+
+      <nav class="tabs" aria-label="Main navigation">
+        <a class="tab active" href="index.html">Home</a>
+        <a class="tab" href="menu.html">Menu</a>
+        <a class="tab" href="#specials">Daily Specials</a>
+        <a class="tab" href="events.html">Events</a>
+        <a class="tab" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="shell">
-    <!-- 01 VIEW ALL LATEST (like your first screenshot) -->
-    <section id="latest" class="section intro">
-      <h2 class="display">VIEW ALL LATEST</h2>
-      <div class="intro-grid">
-        <div class="intro-list">
-          <article class="intro-item">
-            <h3>Italian</h3>
-            <p>We strive to create a warm and welcoming taste.</p>
-            <span class="link-arrow">→</span>
-          </article>
 
-          <article class="intro-item">
-            <h3>Asian</h3>
-            <p>We also offer a wide range of kebab plates.</p>
-            <span class="link-arrow">→</span>
-          </article>
+    <!-- HERO / WELCOME -->
+    <section id="hero" class="section hero-home">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h2 class="display">Welcome to Coakley’s Pub</h2>
+          <p class="sub">
+            Casual family pub in downtown Havre de Grace — good food, good drinks,
+            and a lot of local history.
+          </p>
+          <div class="hero-actions">
+            <a href="menu.html" class="btn-dark">View Menu</a>
+            <a href="events.html" class="btn-ghost">See Events</a>
+            <a href="tel:14109398888" class="hero-call">(410) 939-8888</a>
+          </div>
         </div>
 
-        <figure class="intro-hero">
-          <img src="img/intro-hero.jpg" alt="Featured dish" class="circle-hero" />
-        </figure>
-
-        <div class="intro-list">
-          <article class="intro-item">
-            <h3>Chinese</h3>
-            <p>Our dips and sauces, including smoky baba ganoush.</p>
-            <span class="link-arrow">→</span>
-          </article>
-
-          <article class="intro-item">
-            <h3>Japanese</h3>
-            <p>The perfect complement to any meal and dessert.</p>
-            <span class="link-arrow">→</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 02 EXPLORE REAL TASTE (like your second section) -->
-    <section id="taste" class="section taste">
-      <h2 class="display">EXPLORE REAL TASTE</h2>
-      <p class="sub">We offer a variety of homemade dishes and sweets using local ingredients.</p>
-
-      <div class="taste-grid">
-        <figure class="taste-side">
-          <img src="img/breakfast.jpg" alt="Hearty breakfast" class="circle-side" />
-          <figcaption>
-            <strong>Hearty breakfast</strong>
-            <p>Fatteh hummus loaded with almonds.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="taste-center">
-          <img src="img/steak.jpg" alt="Signature bowl" class="circle-center" />
-          <a href="#mains" class="btn-round">View<br/>Next</a>
-        </figure>
-
-        <figure class="taste-side">
-          <img src="img/salad.jpg" alt="Vegetarian" class="circle-side overlap-left" />
-          <figcaption>
-            <strong>For vegetarian</strong>
-            <p>Find something to love on our breakfast menu.</p>
-          </figcaption>
+        <figure class="hero-photo">
+          <img src="img/steak.jpg" alt="Coakley’s Pub food" class="hero-img" />
         </figure>
       </div>
     </section>
 
-    <!-- 03 OUR CATEGORIES (like the “categories” screenshot) -->
-    <section id="categories" class="section cats">
-      <h2 class="display">OUR CATEGORIES</h2>
-      <div class="cats-grid">
-        <figure class="cats-pic">
-          <img src="img/fash.jpg" alt="Category dish" class="circle-side" />
-        </figure>
-
-        <div class="cats-list">
-          <a class="cat-row" href="#mains">
-            <span>Adana Kabab, Lamb and Beef</span><span class="link-arrow">→</span>
-          </a>
-          <a class="cat-row" href="#mains">
-            <span>White Beans Okra with Lamb Shank</span><span class="link-arrow">→</span>
-          </a>
-          <a class="cat-row" href="#mains">
-            <span>Mandi with Lamb Shank Delima</span><span class="link-arrow">→</span>
-          </a>
-          <a class="cat-row" href="#mains">
-            <span>Green Beans with Lamb Shank</span><span class="link-arrow">→</span>
-          </a>
-          <a class="cat-row" href="#mains">
-            <span>Stuffed grape leaves with lamb shank</span><span class="link-arrow">→</span>
-          </a>
-        </div>
-
-        <figure class="cats-pic">
-          <img src="img/lamb.jpg" alt="Category dish" class="circle-side" />
-        </figure>
-      </div>
-    </section>
-
-    <!-- Real menu sections (keep your function) -->
-    <section id="appetizers" class="section menu">
+    <!-- ANNOUNCEMENT / HOURS -->
+    <section id="announcement" class="section">
       <div class="section-head">
-        <h2 class="section-title">Appetizers</h2>
+        <h2 class="section-title">Announcement & Hours</h2>
         <div class="rule"></div>
       </div>
 
-      <div class="card" role="list">
-        <div class="row" role="listitem">
-          <div class="dot"></div>
-          <div class="meta">
-            <p class="name">Garlic Parmesan Fries</p>
-            <p class="desc">Hand-cut fries, roasted garlic butter, parmesan, parsley.</p>
-          </div>
-          <div class="price">$7</div>
+      <div class="card card-announcement">
+        <div class="ann-left">
+          <h3>Hours of Operation</h3>
+          <p class="ann-text">
+            Sun, Mon, Wed, Thurs: <strong>9:00 AM – 9:00 PM</strong><br>
+            Fri & Sat: <strong>9:00 AM – 10:00 PM</strong><br>
+            <span class="ann-closed">Closed on Tuesdays</span>
+          </p>
+          <p class="ann-small">
+            Kitchen opens at 11:00 AM daily. Bar may stay open later.
+          </p>
         </div>
-
-        <div class="row" role="listitem">
-          <div class="dot"></div>
-          <div class="meta">
-            <p class="name">Buffalo Wings</p>
-            <p class="desc">Mild, hot, or honey BBQ. Celery & ranch.</p>
-          </div>
-          <div class="price">$11</div>
-        </div>
-
-        <div class="row" role="listitem">
-          <div class="dot"></div>
-          <div class="meta">
-            <p class="name">Crab Dip</p>
-            <p class="desc">Jumbo lump crab, Old Bay, toasted baguette.</p>
-          </div>
-          <div class="price">$13</div>
+        <div class="ann-right">
+          <h4>Reservations & Parties</h4>
+          <p class="ann-text">
+            For reservations, large groups, or music bookings,
+            please call or email the pub.
+          </p>
+          <p class="ann-contact">
+            Phone: <a href="tel:14109398888">(410) 939-8888</a><br>
+            Email: <a href="mailto:coakleyspubhdg@gmail.com">coakleyspubhdg@gmail.com</a>
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="mains" class="section menu">
+    <!-- EVENTS & SPECIALS PREVIEW -->
+    <section id="specials" class="section">
       <div class="section-head">
-        <h2 class="section-title">Mains</h2>
+        <h2 class="section-title">Events & Daily Specials</h2>
         <div class="rule"></div>
       </div>
 
-      <div class="card" role="list">
-        <div class="row" role="listitem">
-          <div class="dot"></div>
-          <div class="meta">
-            <p class="name">Coakley Burger</p>
-            <p class="desc">Aged beef, cheddar, charred onion, house sauce, brioche.</p>
-          </div>
-          <div class="price">$14</div>
-        </div>
+      <div class="home-cards">
+        <article class="home-card">
+          <h3>Today’s Specials</h3>
+          <p>
+            Rotating soups, seasonal plates, and drink specials.
+            Ask your server for what’s on today.
+          </p>
+          <a href="menu.html" class="home-link">View full menu →</a>
+        </article>
 
-        <div class="row" role="listitem">
-          <div class="dot"></div>
-          <div class="meta">
-            <p class="name">Fish & Chips</p>
-            <p class="desc">Crispy cod, malt fries, lemon, tartar.</p>
-          </div>
-          <div class="price">$16</div>
-        </div>
+        <article class="home-card">
+          <h3>Live Music & Trivia</h3>
+          <p>
+            Weekly live bands, trivia nights, and game-day parties.
+          </p>
+          <a href="events.html" class="home-link">See event calendar →</a>
+        </article>
 
-        <div class="row" role="listitem">
-          <div class="dot"></div>
-          <div class="meta">
-            <p class="name">Steak & Fries</p>
-            <p class="desc">8oz sirloin, garlic herb butter, seasoned fries.</p>
-          </div>
-          <div class="price">$20</div>
-        </div>
+        <article class="home-card">
+          <h3>Family-Friendly Atmosphere</h3>
+          <p>
+            Multiple dining rooms, patio seating, and a cozy bar area
+            for friends and family.
+          </p>
+        </article>
       </div>
     </section>
 
-    <section id="drinks" class="section menu">
+    <!-- ABOUT -->
+    <section id="about" class="section">
       <div class="section-head">
-        <h2 class="section-title">Drinks</h2>
+        <h2 class="section-title">About Coakley’s Pub</h2>
         <div class="rule"></div>
       </div>
 
-      <div class="card" role="list">
-        <div class="row" role="listitem">
-          <div class="dot"></div>
-          <div class="meta">
-            <p class="name">House Lager (16oz)</p>
-            <p class="desc">Crisp, clean, lightly floral.</p>
-          </div>
-          <div class="price">$6</div>
+      <div class="card card-about">
+        <div class="about-text">
+          <p>
+            Coakley’s Pub is a casual, family-friendly restaurant in the heart
+            of Havre de Grace, just steps from the river and the shops.
+          </p>
+          <p>
+            The menu mixes Irish favorites with American pub food and local
+            Maryland seafood — from steaks and crab cakes to wings and nachos.
+          </p>
+          <p>
+            Whether you’re stopping in for a pint of Guinness, a game on TV,
+            or a quiet dinner, there’s a spot for you.
+          </p>
         </div>
-
-        <div class="row" role="listitem">
-          <div class="dot"></div>
-          <div class="meta">
-            <p class="name">Irish Stout</p>
-            <p class="desc">Rich, creamy head, roasted malt finish.</p>
-          </div>
-          <div class="price">$7</div>
-        </div>
-
-        <div class="row" role="listitem">
-          <div class="dot"></div>
-          <div class="meta">
-            <p class="name">Signature Cocktails</p>
-            <p class="desc">Handcrafted with fresh ingredients.</p>
-          </div>
-          <div class="price">$10</div>
-        </div>
+        <figure class="about-photo">
+          <img src="img/fash.jpg" alt="Inside Coakley’s Pub" class="about-img" />
+        </figure>
       </div>
     </section>
 
-    <section id="specials" class="section menu">
+    <!-- CATERING / PRIVATE EVENTS -->
+    <section id="catering" class="section">
       <div class="section-head">
-        <h2 class="section-title">Chef’s Specials</h2>
+        <h2 class="section-title">Special Events & Catering</h2>
         <div class="rule"></div>
       </div>
 
-      <div class="card" role="list">
-        <div class="row" role="listitem">
-          <div class="dot"></div>
-          <div class="meta">
-            <p class="name">Shepherd’s Pie</p>
-            <p class="desc">Beef, carrots & peas, topped with creamy mash.</p>
-          </div>
-          <div class="price">$17</div>
-        </div>
-
-        <div class="row" role="listitem">
-          <div class="dot"></div>
-          <div class="meta">
-            <p class="name">Guinness BBQ Ribs</p>
-            <p class="desc">Slow-cooked ribs lacquered in Guinness glaze.</p>
-          </div>
-          <div class="price">$22</div>
-        </div>
+      <div class="card card-catering">
+        <p>
+          Coakley’s is available for private events like birthdays, weddings,
+          business lunches, and more. The team can help plan food, drinks, and setup.
+        </p>
+        <p>
+          For catering questions or to talk about your event,
+          please reach out by phone or email.
+        </p>
+        <a href="events.html#host" class="btn-dark">Host an Event</a>
       </div>
     </section>
 
-    <!-- CONNECT / FOOTER like your screenshot -->
-    <section id="connect" class="section connect">
-      <h2 class="display">LET’S CONNECT WITH US</h2>
+    <!-- CONTACT -->
+    <section id="contact" class="section connect">
+      <h2 class="display">Contact & Location</h2>
+
       <form class="subscribe" onsubmit="return false">
-        <input type="email" placeholder="Enter your e-mail" aria-label="Email" />
-        <button class="btn-dark" type="submit">SUBSCRIBE NOW</button>
+        <input type="email" placeholder="Join our email list" aria-label="Email" />
+        <button class="btn-dark" type="submit">Subscribe</button>
       </form>
 
       <footer class="footer">
         <div class="f-brand">
-          <h3>ifood</h3>
-          <p>A restaurant is a business that prepares and serves food.</p>
+          <h3>Coakley’s Pub</h3>
+          <p>
+            406 Saint John St<br>
+            Havre de Grace, MD 21078<br>
+            <a href="tel:14109398888">(410) 939-8888</a><br>
+            <a href="mailto:coakleyspubhdg@gmail.com">coakleyspubhdg@gmail.com</a>
+          </p>
         </div>
+
         <nav class="f-links">
-          <a href="#appetizers">Dishes</a>
-          <a href="#connect">Contact</a>
-          <a href="#categories">Resources</a>
-          <a href="#">Terms</a>
-          <a href="#">Privacy</a>
+          <a href="menu.html">Menu</a>
+          <a href="#specials">Daily Specials</a>
+          <a href="events.html">Events</a>
+          <a href="#catering">Catering</a>
         </nav>
+
         <nav class="f-social">
           <a href="#">Facebook</a>
           <a href="#">Instagram</a>
-          <a href="#">Twitter</a>
         </nav>
       </footer>
-      <p class="copy">©2025 ifood | All Rights Reserved</p>
+
+      <p class="copy">©2025 Coakley’s Pub | For class project use</p>
     </section>
   </main>
 
