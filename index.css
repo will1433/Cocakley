@@ -266,6 +266,7 @@
 }
 
 /* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -302,9 +303,14 @@
   .home-cards {
     grid-template-columns: 1fr;
   }
-  /* ========== GLOBAL SECTION ANIMATION ON HOME ========== */
-/* start hidden */
+}
+
+/* ========== SECTION SPACING + ANIMATION ========== */
+
+/* spacing + base animation state */
 .section {
+  margin-top: 70px;
+  margin-bottom: 70px;
   opacity: 0;
   transform: translateY(26px);
   transition:
@@ -334,12 +340,7 @@
   transform: translateY(0) scale(1);
 }
 
-/* keep spacing from before if you added it */
-.section {
-  margin-top: 70px;
-  margin-bottom: 70px;
-}
-
+/* mobile spacing tweak */
 @media (max-width: 640px) {
   .section {
     margin-top: 50px;
@@ -347,6 +348,4 @@
   }
 }
 
-  
-}
 

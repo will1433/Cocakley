@@ -34,7 +34,8 @@ body{margin:0;color:var(--ink);background:
 .sub{margin:0;color:var(--muted)}
 
 /* sections */
-.section{scroll-margin-top:120px;margin:34px 0 56px}
+.section{scroll-margin-top:120px;margin:34px 0 56; margin-top: 70px;
+  margin-bottom: 70px}
 .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:0 0 18px}
 .section-title{margin:0;font:700 40px/1 "Playfair Display",serif}
 .underline{width:120px;height:1px;background:var(--ink);opacity:.15}
