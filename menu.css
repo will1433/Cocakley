@@ -42,11 +42,17 @@ body{
 .sub{margin:-6px 0 26px; color:var(--muted)}
 
 /* = Intro block (view all latest) = */
+.intro{
+  background:transparent;
+  padding:0;
+  border:none;
+  box-shadow:none;
+}
 .intro .intro-grid{display:grid; grid-template-columns:1fr minmax(280px,480px) 1fr; gap:22px; align-items:center}
 .intro .intro-item{display:grid; grid-template-columns:1fr auto; gap:8px; padding:16px 0; border-bottom:1px solid var(--line)}
 .intro .intro-item h3{margin:0; font:700 18px/1.2 Inter}
 .intro .intro-item p{margin:0; color:var(--muted); font-size:14px; grid-column:1 / -1}
-.link-arrow{align-self:center; font-size:18px; color:var(--ink)}
+.link-arrow{align-self:center; font-size:18px; color:var(--ink); border:none; width:auto; height:auto; display:inline}
 .intro .intro-hero{display:grid; place-items:center}
 .circle-hero{width:100%; max-width:420px; aspect-ratio:1/1; border-radius:50%; object-fit:cover; box-shadow:var(--shadow); border:1px solid var(--line)}
 
@@ -56,8 +62,12 @@ body{
   grid-template-columns: minmax(220px, 260px) 1fr minmax(220px, 260px);
   align-items: center;
   justify-items: center;
-  gap: 60px;  /* more space between sides and center */
-  margin-top: 40px;
+  gap: 50px;
+  margin-top: 30px;
+  background:linear-gradient(120deg, rgba(244,242,238,0.85), #fff);
+  padding:22px;
+  border-radius:18px;
+  box-shadow:0 16px 38px rgba(0,0,0,0.08);
 }
 .circle-side {
   width: 220px;
@@ -108,8 +118,8 @@ body{
 /* = Categories strip = */
 .cats-grid{display:grid; grid-template-columns:auto 1fr auto; gap:22px; align-items:center}
 .cats-pic{display:grid; place-items:center}
-.cats-list{display:grid; gap:12px}
-.cat-row{display:flex; justify-content:space-between; align-items:center; gap:16px; padding:14px 16px; border:1px solid var(--line); border-radius:12px; background:#fff; text-decoration:none; color:inherit}
+.cats-list{display:grid; gap:12px; background:#fff; border-radius:18px; padding:12px; box-shadow:0 12px 30px rgba(0,0,0,0.08)}
+.cat-row{display:flex; justify-content:space-between; align-items:center; gap:16px; padding:14px 16px; border-radius:12px; background:#fff; text-decoration:none; color:inherit; box-shadow:0 6px 14px rgba(0,0,0,0.05)}
 .cat-row:hover{box-shadow:var(--shadow)}
 .rule{flex:0 0 auto; width:120px; height:1px; background:var(--ink); opacity:.15}
 
@@ -117,16 +127,39 @@ body{
 .section.menu{margin-top:36px}
 .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin:0 0 18px}
 .section-title{margin:0; font:700 40px/1 "Playfair Display", Georgia, serif}
-.card{background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:var(--shadow)}
-.section.is-active .card{border-color:var(--line-2); box-shadow:0 16px 36px rgba(10,10,12,.08)}
-.row{display:flex; gap:18px; align-items:flex-start; padding:18px 18px; border-top:1px solid var(--line)}
-.row:first-child{border-top:none}
-.row:hover{background:var(--paper)}
+.card{background:#fff; border:1px solid var(--line-2); border-radius:18px; overflow:hidden; box-shadow:var(--shadow)}
+.section.is-active .card{border-color:var(--line); box-shadow:0 16px 36px rgba(10,10,12,.08)}
+.row{
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  padding:18px 18px;
+  border-bottom:1px solid var(--line-2);
+  border-left:3px solid transparent;
+  transition:background .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.row:last-child{border-bottom:none}
+.row:hover{
+  background:var(--paper);
+  transform:translateY(-1px);
+  box-shadow:0 10px 22px rgba(0,0,0,0.06);
+  border-left-color:var(--gold);
+}
 .dot{width:10px; height:10px; border-radius:50%; background:#111; opacity:.9; margin-top:8px; flex:0 0 auto; box-shadow:0 0 0 3px #fff, 0 0 0 4px var(--line)}
-.meta{flex:1 1 auto}
+.meta{flex:1 1 auto; min-width:0}
 .name{margin:0; font:700 18px/1.25 Inter}
 .desc{margin:6px 0 0; color:var(--muted); font-size:14.5px}
-.price{margin-left:auto; flex:0 0 auto; font:700 15px/1 Inter; color:#111; padding-left:18px; border-left:1px solid var(--line); min-width:64px; text-align:right}
+.price{
+  margin-left:auto;
+  font:700 15px/1 Inter;
+  color:#111;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  min-width:72px;
+  text-align:center;
+  background:var(--pill);
+}
 
 /* = Connect / Footer = */
 .connect .subscribe{display:flex; gap:10px; flex-wrap:wrap; margin:8px 0 20px}
@@ -168,20 +201,18 @@ body{
 }
 
 .overlap-left{
-  position:absolute;
-  left:calc(var(--peek) * -1);            /* how much it sticks out */
-  top:50%;
-  transform:translateY(-50%);
-  z-index:2;             /* keeps image above the card */
+  position:static;
+  transform:none;
+  margin-bottom:10px;
 }
 
 .taste-side--right{
-  padding-left: calc(var(--circle) + 2*var(--ring) - var(--peek));
+  padding-left: calc(var(--circle) + 2*var(--ring));
   position: relative;
-  overflow: visible;    /* ~= circle size minus overlap */
+  overflow: visible;
 }
 
-.taste-side, .side-card { overflow:visible; }
+.taste-side, .side-card { overflow:visible; position:relative; }
 
 .taste-wrap {
   display: flex;
@@ -205,23 +236,5 @@ body{
 .taste-side strong {
   position: relative;
   z-index: 2;
-}
-
-.row{
-  display: grid;
-  grid-template-columns: 14px 1fr auto 140px; /* thumb ≈ 140px */
-  align-items: center;
-  gap: 16px;
-}
-
-/* circle thumb */
-.dish-thumb{
-  width: 140px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 8px solid #fff;
-  box-shadow: 0 10px 24px rgba(0,0,0,.10);
-  justify-self: end; /* push to the edge on odd rows */
 }
 

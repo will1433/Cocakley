@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Coakley’s Pub — Events</title>
+  <title>Coakley's Pub - Events</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -12,16 +12,17 @@
 <body id="top">
   <!-- Header -->
   <header class="header">
+    <a class="skip-link" href="#upcoming">Skip to events</a>
     <div class="shell">
-      <div class="brand">
+      <a class="brand" href="index.html" aria-label="Coakley's Pub home">
         <div class="logo" aria-hidden="true"></div>
-        <h1 class="title">Coakley’s Pub <span class="tag">Events</span></h1>
-      </div>
+        <h1 class="title">Coakley's Pub <span class="tag">Events</span></h1>
+      </a>
       <nav class="tabs" aria-label="Jump to section">
         <a class="tab" href="#upcoming">Upcoming</a>
         <a class="tab" href="#calendar">Calendar</a>
         <a class="tab" href="#past">Past</a>
-        <a class="tab" href="#host">Host An Event</a>
+        <a class="tab" href="#host">Host an Event</a>
       </nav>
     </div>
   </header>
@@ -30,8 +31,31 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-wrap">
-        <h2 class="display">Good times, great company.</h2>
-        <p class="sub">Live music, trivia nights, game-day specials, and seasonal parties.</p>
+        <div class="hero-copy">
+          <h2 class="display">Good times, great company.</h2>
+          <p class="sub">Find live music, trivia nights, game-day specials, and seasonal parties.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#upcoming">Browse events</a>
+            <a class="btn ghost" href="#host">Book your event</a>
+          </div>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-card">
+            <h3>Live Music</h3>
+            <p>Bands every Friday and select Saturdays.</p>
+            <span class="pill music">Music</span>
+          </div>
+          <div class="hero-card">
+            <h3>Trivia Nights</h3>
+            <p>Tuesdays at 7:00 PM - reserve early.</p>
+            <span class="pill trivia">Trivia</span>
+          </div>
+          <div class="hero-card">
+            <h3>Game Day</h3>
+            <p>Sound on, pitcher deals, and pub bites.</p>
+            <span class="pill sports">Sports</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -43,7 +67,7 @@
       </div>
 
       <form class="filters" onsubmit="return false">
-        <input id="q" type="search" placeholder="Search (e.g., trivia, band, football)" />
+        <input id="q" type="search" placeholder="Search live music, trivia, specials" />
         <select id="cat" aria-label="Category">
           <option value="">All categories</option>
           <option value="music">Live Music</option>
@@ -51,8 +75,18 @@
           <option value="sports">Game Day</option>
           <option value="seasonal">Seasonal</option>
         </select>
-        <input id="month" type="month" />
+        <select id="monthSelect" aria-label="Month">
+          <option value="">All months</option>
+          <option value="2025-04">April 2025</option>
+          <option value="2025-05">May 2025</option>
+          <option value="2025-06">June 2025</option>
+        </select>
+        <div class="quick-filters" aria-label="Quick filters">
+          <button class="pill-btn" type="button" data-quick="week">This week</button>
+          <button class="pill-btn" type="button" data-quick="weekend">This weekend</button>
+        </div>
         <button id="clear" class="btn" type="button">Clear</button>
+        <a class="btn ghost" href="#host">Book an event</a>
       </form>
 
       <!-- Event list -->
@@ -61,15 +95,15 @@
         <article class="event row" role="listitem"
                  data-title="Friday Night Live: The Harbor Band"
                  data-cat="music" data-date="2025-04-18">
-          <img class="thumb" src="#img#" alt="The Harbor Band poster" />
+          <img class="thumb" src="img/steak.jpg" alt="The Harbor Band poster" />
           <div class="meta">
             <h3 class="name">Friday Night Live: The Harbor Band</h3>
-            <p class="desc">Classic rock & indie favorites. Doors 7:00 PM • Show 8:00 PM.</p>
+            <p class="desc">Classic rock and indie favorites. Doors 7:00 PM - show 8:00 PM.</p>
             <div class="badges">
               <span class="badge">Live Music</span><span class="badge">21+</span>
             </div>
             <div class="meta2">
-              <span class="dt">Fri, Apr 18 • 8:00 PM</span>
+              <span class="dt">Fri, Apr 18 - 8:00 PM</span>
               <span class="loc">Main Stage</span>
             </div>
             <div class="actions">
@@ -80,17 +114,17 @@
         </article>
 
         <article class="event row" role="listitem"
-                 data-title="Pub Trivia — General Knowledge"
+                 data-title="Pub Trivia - General Knowledge"
                  data-cat="trivia" data-date="2025-04-22">
-          <img class="thumb" src="#img#" alt="Trivia night" />
+          <img class="thumb" src="img/salad.jpg" alt="Trivia night" />
           <div class="meta">
-            <h3 class="name">Pub Trivia — General Knowledge</h3>
-            <p class="desc">Teams up to 6. Prizes for top 3. Happy hour 5–7 PM.</p>
+            <h3 class="name">Pub Trivia - General Knowledge</h3>
+            <p class="desc">Teams up to 6. Prizes for top 3. Happy hour 5-7 PM.</p>
             <div class="badges">
               <span class="badge">Trivia</span><span class="badge">Free</span>
             </div>
             <div class="meta2">
-              <span class="dt">Tue, Apr 22 • 7:00 PM</span>
+              <span class="dt">Tue, Apr 22 - 7:00 PM</span>
               <span class="loc">Dining Room</span>
             </div>
             <div class="actions">
@@ -103,15 +137,15 @@
         <article class="event row" role="listitem"
                  data-title="Game Day: Baltimore vs Pittsburgh"
                  data-cat="sports" data-date="2025-04-27">
-          <img class="thumb" src="#img#" alt="Game day" />
+          <img class="thumb" src="img/breakfast.jpg" alt="Game day" />
           <div class="meta">
             <h3 class="name">Game Day: Baltimore vs Pittsburgh</h3>
-            <p class="desc">Sound on. Wing & pitcher specials all game.</p>
+            <p class="desc">Sound on. Wing and pitcher specials all game.</p>
             <div class="badges">
               <span class="badge">Game Day</span><span class="badge">Specials</span>
             </div>
             <div class="meta2">
-              <span class="dt">Sun, Apr 27 • 1:00 PM</span>
+              <span class="dt">Sun, Apr 27 - 1:00 PM</span>
               <span class="loc">Bar & Patio</span>
             </div>
             <div class="actions">
@@ -124,7 +158,7 @@
         <article class="event row" role="listitem"
                  data-title="Cinco de Mayo Patio Party"
                  data-cat="seasonal" data-date="2025-05-05">
-          <img class="thumb" src="#img#" alt="Cinco de Mayo" />
+          <img class="thumb" src="img/lamb.jpg" alt="Cinco de Mayo" />
           <div class="meta">
             <h3 class="name">Cinco de Mayo Patio Party</h3>
             <p class="desc">Live DJ, tacos, and margarita flights. Rain or shine.</p>
@@ -132,7 +166,7 @@
               <span class="badge">Seasonal</span><span class="badge">Outdoor</span>
             </div>
             <div class="meta2">
-              <span class="dt">Mon, May 5 • 6:00 PM</span>
+              <span class="dt">Mon, May 5 - 6:00 PM</span>
               <span class="loc">Patio</span>
             </div>
             <div class="actions">
@@ -144,22 +178,41 @@
       </div>
     </section>
 
-    <!-- Simple calendar embed placeholder -->
+    <!-- Compact calendar -->
     <section id="calendar" class="section">
-  <div class="section-head">
-    <h2 class="section-title">Calendar</h2>
-    <div class="underline"></div>
-  </div>
+      <div class="section-head">
+        <h2 class="section-title">Calendar</h2>
+        <div class="underline"></div>
+      </div>
 
-  <!-- Responsive Google Calendar embed -->
-  <div class="calendar-embed">
-    <!-- TODO: replace CALENDAR_ID and TIME_ZONE -->
-    <iframe
-      src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=TIME_ZONE&mode=MONTH&showTitle=0&showPrint=0&showCalendars=0&showTabs=0&src=CALENDAR_ID"
-      style="border:0" frameborder="0" scrolling="no"></iframe>
-  </div>
-</section>
+      <div class="cal-layout">
+        <div class="calendar-card">
+          <div class="cal-top">
+            <button class="cal-nav" type="button" data-dir="-1" aria-label="Previous month"><</button>
+            <div id="calTitle" class="cal-title">Month Year</div>
+            <button class="cal-nav" type="button" data-dir="1" aria-label="Next month">></button>
+          </div>
+          <div class="cal-legend">
+            <span class="chip music">Live Music</span>
+            <span class="chip trivia">Trivia</span>
+            <span class="chip sports">Game Day</span>
+            <span class="chip seasonal">Seasonal</span>
+          </div>
+          <div class="cal-weekdays"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+          <div class="cal-days" id="calDays"></div>
+        </div>
 
+        <div class="calendar-side card">
+          <h3>Highlights</h3>
+          <ul class="cal-highlights">
+            <li><strong>Fri, Apr 18:</strong> Harbor Band - 8:00 PM</li>
+            <li><strong>Tue, Apr 22:</strong> Pub Trivia - 7:00 PM</li>
+            <li><strong>Sun, Apr 27:</strong> Game Day vs Pittsburgh - 1:00 PM</li>
+            <li><strong>Mon, May 5:</strong> Cinco de Mayo Patio Party - 6:00 PM</li>
+          </ul>
+          <a class="btn" href="#host">Book a table</a>
+        </div>
+      </div>
     </section>
 
     <!-- Past events -->
@@ -169,10 +222,10 @@
         <div class="underline"></div>
       </div>
       <div class="past-grid">
-        <img src="#img#" alt="Past event 1" class="past-thumb">
-        <img src="#img#" alt="Past event 2" class="past-thumb">
-        <img src="#img#" alt="Past event 3" class="past-thumb">
-        <img src="#img#" alt="Past event 4" class="past-thumb">
+        <img src="img/steak.jpg" alt="Past event 1" class="past-thumb">
+        <img src="img/fash.jpg" alt="Past event 2" class="past-thumb">
+        <img src="img/salad.jpg" alt="Past event 3" class="past-thumb">
+        <img src="img/lamb.jpg" alt="Past event 4" class="past-thumb">
       </div>
     </section>
 
@@ -182,34 +235,52 @@
         <h2 class="section-title">Host an Event</h2>
         <div class="underline"></div>
       </div>
-      <form class="host card" onsubmit="return false">
+      <form class="host card" onsubmit="return false" id="hostForm">
         <div class="row field">
-          <label>Event Type</label>
-          <select>
+          <label for="eventType">Event Type</label>
+          <select id="eventType">
             <option>Birthday</option><option>Corporate</option>
             <option>Fundraiser</option><option>Other</option>
           </select>
         </div>
         <div class="row field">
-          <label>Date</label>
-          <input type="date" />
+          <label for="eventDate">Date</label>
+          <input id="eventDate" type="date" />
         </div>
         <div class="row field">
-          <label>Guests</label>
-          <input type="number" min="1" value="20" />
+          <label for="eventGuests">Guests</label>
+          <input id="eventGuests" type="number" min="1" value="20" />
         </div>
         <div class="row field">
-          <label>Notes</label>
-          <textarea rows="3" placeholder="Tell us about your event…"></textarea>
+          <label for="eventContact">Contact</label>
+          <input id="eventContact" type="text" placeholder="Phone or email" />
+        </div>
+        <div class="row field">
+          <label for="eventNotes">Notes</label>
+          <textarea id="eventNotes" rows="3" placeholder="Tell us about your event"></textarea>
         </div>
         <div class="row actions">
           <button class="btn" type="submit">Request Quote</button>
+          <p class="form-status" id="hostStatus" role="status" aria-live="polite" tabindex="-1"></p>
         </div>
       </form>
     </section>
   </main>
 
+  <!-- Reservation modal -->
+  <div class="modal-backdrop" id="hostModal" role="dialog" aria-modal="true" aria-labelledby="hostModalTitle" aria-describedby="hostModalDesc">
+    <div class="modal-card">
+      <button class="modal-close" type="button" id="hostModalClose" aria-label="Close">X</button>
+      <h3 id="hostModalTitle">Reservation request sent</h3>
+      <p id="hostModalDesc">Thanks! We will confirm shortly by phone or email.</p>
+      <div class="modal-summary" id="hostModalSummary"></div>
+      <div class="modal-actions">
+        <button class="btn" type="button" id="hostModalOk">Done</button>
+      </div>
+    </div>
+  </div>
+
   <!-- back to top -->
-  <a class="to-top" href="#top" aria-label="Back to top">↑</a>
+  <a class="to-top" href="#top" aria-label="Back to top">Top</a>
 </body>
 </html>
