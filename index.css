@@ -1,5 +1,5 @@
 /* home.css
-   More “pub vibe” for the Home page.
+   More pub vibe for the Home page.
    menu.css already gives colors, fonts, header, buttons, etc.
 */
 
@@ -149,13 +149,13 @@
   text-decoration: underline;
 }
 
-/* simple “ribbon” bar at the top of this section */
+/* simple ribbon bar at the top of this section */
 #announcement .section-head {
   align-items: center;
 }
 
 #announcement .section-title::after {
-  content: " • Kitchen opens at 11 AM";
+  content: " - Kitchen opens at 11 AM";
   font-size: 13px;
   font-weight: 500;
   color: var(--muted);
@@ -266,7 +266,6 @@
 }
 
 /* ===== RESPONSIVE ===== */
-/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -305,7 +304,7 @@
   }
 }
 
-/* ========== SECTION SPACING + ANIMATION ========== */
+
 
 /* spacing + base animation state */
 .section {

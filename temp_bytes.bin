@@ -1,0 +1,5 @@
+smooth}
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(80% 50% at 50% 0%, #f6f4f1 0%, transpar
